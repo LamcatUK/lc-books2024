@@ -73,125 +73,126 @@ get_header();
                 ?>
             </div>
         </div>
-        <?php
+        <div class="d-flex justify-content-between">
+            <?php
 
-        $current_series = get_field('series') ?? null;
-        $current_number = get_field('series_number') ?? null;
+            $current_series = get_field('series') ?? null;
+            $current_number = get_field('series_number') ?? null;
 
-        if ($current_series && $current_number) {
+            if ($current_series && $current_number) {
 
-            // Query for the previous book in the series
-            $prev_book = new WP_Query(array(
-                'post_type' => 'post', // Default WordPress post type
-                'posts_per_page' => 1,
-                'meta_query' => array(
-                    array(
-                        'key' => 'series',
-                        'value' => $current_series,
-                        'compare' => '='
+                // Query for the previous book in the series
+                $prev_book = new WP_Query(array(
+                    'post_type' => 'post', // Default WordPress post type
+                    'posts_per_page' => 1,
+                    'meta_query' => array(
+                        array(
+                            'key' => 'series',
+                            'value' => $current_series,
+                            'compare' => '='
+                        ),
+                        array(
+                            'key' => 'series_number',
+                            'value' => $current_number,
+                            'compare' => '<',
+                            'type' => 'NUMERIC'
+                        )
                     ),
-                    array(
-                        'key' => 'series_number',
-                        'value' => $current_number,
-                        'compare' => '<',
-                        'type' => 'NUMERIC'
-                    )
-                ),
-                'orderby' => array(
-                    'meta_value_num' => 'DESC'
-                ),
-                'meta_key' => 'series_number'
-            ));
-
-            // Display the previous book link if found
-            if ($prev_book->have_posts()) {
-                while ($prev_book->have_posts()) : $prev_book->the_post();
-                    echo '<a href="' . get_permalink() . '">&larr; Previous Book: ' . get_the_title() . '</a><br>';
-                endwhile;
-                wp_reset_postdata();
-            }
-
-            // Query for the next book in the series
-            $next_book = new WP_Query(array(
-                'post_type' => 'post', // Default WordPress post type
-                'posts_per_page' => 1,
-                'meta_query' => array(
-                    array(
-                        'key' => 'series',
-                        'value' => $current_series,
-                        'compare' => '='
+                    'orderby' => array(
+                        'meta_value_num' => 'DESC'
                     ),
-                    array(
-                        'key' => 'series_number',
-                        'value' => $current_number,
-                        'compare' => '>',
-                        'type' => 'NUMERIC'
-                    )
-                ),
-                'orderby' => array(
-                    'meta_value_num' => 'ASC'
-                ),
-                'meta_key' => 'series_number'
-            ));
+                    'meta_key' => 'series_number'
+                ));
 
-            // Display the next book link if found
-            if ($next_book->have_posts()) {
-                while ($next_book->have_posts()) : $next_book->the_post();
-                    echo '<a href="' . get_permalink() . '">Next Book: ' . get_the_title() . ' &rarr;</a><br>';
-                endwhile;
-                wp_reset_postdata();
-            }
-        } else {
-            echo '<p>This book is not part of a series.</p>';
-        }
-
-
-        $author = get_field('author');
-
-        $q = new WP_Query(array(
-            'post_type' => 'post',
-            'posts_per_page' => 6,
-            'post__not_in' => array(get_the_ID()),
-            'meta_query' => array(
-                array(
-                    'key' => 'author',
-                    'value' => $author,
-                    'compare' => '='
-                )
-            )
-        ));
-
-        if ($q->have_posts()) {
-        ?>
-            <hr class="mt-4">
-            <section class="latest_posts mt-4">
-                <h3 class="fs-700"><span>More by <?= $author ?></h3>
-                <div class="row mb-4">
-                    <?php
-                    while ($q->have_posts()) {
-                        $q->the_post();
-                        $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                        if (!$img) {
-                            $img = get_stylesheet_directory_uri() . '/img/default-blog.jpg';
-                        }
-
-                    ?>
-                        <div class="col-sm-6 col-xl-2">
-                            <a href="<?= get_the_permalink(get_the_ID()) ?>" class="latest_posts__card">
-                                <?= get_the_post_thumbnail(get_the_ID(), 'large', array('class' => 'latest_posts__card_bg')) ?>
-                                <h3><?= get_the_title(get_the_ID()) ?></h3>
-                            </a>
-                        </div>
-                    <?php
-                    }
+                // Display the previous book link if found
+                if ($prev_book->have_posts()) {
+                    while ($prev_book->have_posts()) : $prev_book->the_post();
+                        echo '<a href="' . get_permalink() . '">&larr; Previous Book: ' . get_the_title() . '</a><br>';
+                    endwhile;
                     wp_reset_postdata();
-                    ?>
-                </div>
-            </section>
-        <?php
-        }
-        ?>
-    </div>
+                }
+
+                // Query for the next book in the series
+                $next_book = new WP_Query(array(
+                    'post_type' => 'post', // Default WordPress post type
+                    'posts_per_page' => 1,
+                    'meta_query' => array(
+                        array(
+                            'key' => 'series',
+                            'value' => $current_series,
+                            'compare' => '='
+                        ),
+                        array(
+                            'key' => 'series_number',
+                            'value' => $current_number,
+                            'compare' => '>',
+                            'type' => 'NUMERIC'
+                        )
+                    ),
+                    'orderby' => array(
+                        'meta_value_num' => 'ASC'
+                    ),
+                    'meta_key' => 'series_number'
+                ));
+
+                // Display the next book link if found
+                if ($next_book->have_posts()) {
+                    while ($next_book->have_posts()) : $next_book->the_post();
+                        echo '<a href="' . get_permalink() . '">Next Book: ' . get_the_title() . ' &rarr;</a><br>';
+                    endwhile;
+                    wp_reset_postdata();
+                }
+            } else {
+                echo '<p>This book is not part of a series.</p>';
+            }
+            echo '</div>';
+
+            $author = get_field('author');
+
+            $q = new WP_Query(array(
+                'post_type' => 'post',
+                'posts_per_page' => 6,
+                'post__not_in' => array(get_the_ID()),
+                'meta_query' => array(
+                    array(
+                        'key' => 'author',
+                        'value' => $author,
+                        'compare' => '='
+                    )
+                )
+            ));
+
+            if ($q->have_posts()) {
+            ?>
+                <hr class="mt-4">
+                <section class="latest_posts mt-4">
+                    <h3 class="fs-700"><span>More by <?= $author ?></h3>
+                    <div class="row mb-4">
+                        <?php
+                        while ($q->have_posts()) {
+                            $q->the_post();
+                            $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                            if (!$img) {
+                                $img = get_stylesheet_directory_uri() . '/img/default-blog.jpg';
+                            }
+
+                        ?>
+                            <div class="col-sm-6 col-xl-2">
+                                <a href="<?= get_the_permalink(get_the_ID()) ?>" class="latest_posts__card">
+                                    <?= get_the_post_thumbnail(get_the_ID(), 'large', array('class' => 'latest_posts__card_bg')) ?>
+                                    <h3><?= get_the_title(get_the_ID()) ?></h3>
+                                </a>
+                            </div>
+                        <?php
+                        }
+                        wp_reset_postdata();
+                        ?>
+                    </div>
+                </section>
+            <?php
+            }
+            ?>
+        </div>
 </main>
 <?php
 get_footer();
