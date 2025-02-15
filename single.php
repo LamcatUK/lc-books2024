@@ -138,7 +138,7 @@ get_header();
                 // Display the next book link if found
                 if ($next_book->have_posts()) {
                     while ($next_book->have_posts()) : $next_book->the_post();
-                        echo '<a href="' . get_permalink() . '" class="justify-self-end">Next Book: ' . get_the_title() . ' &rarr;</a>';
+                        echo '<a href="' . get_permalink() . '">Next Book: ' . get_the_title() . ' &rarr;</a>';
                     endwhile;
                     wp_reset_postdata();
                 }
