@@ -163,7 +163,8 @@ get_header();
 
         if ($q->have_posts()) {
         ?>
-            <section class="latest_posts mt-2">
+            <hr class="mt-4">
+            <section class="latest_posts mt-4">
                 <h3 class="fs-700"><span>More by <?= $author ?></h3>
                 <div class="row mb-4">
                     <?php
