@@ -107,7 +107,7 @@ get_header();
                 // Display the previous book link if found
                 if ($prev_book->have_posts()) {
                     while ($prev_book->have_posts()) : $prev_book->the_post();
-                        echo '<a href="' . get_permalink() . '">&larr; Previous Book: ' . get_the_title() . '</a><br>';
+                        echo '<a href="' . get_permalink() . '">&larr; Previous Book: ' . get_the_title() . '</a>';
                     endwhile;
                     wp_reset_postdata();
                 }
@@ -138,7 +138,7 @@ get_header();
                 // Display the next book link if found
                 if ($next_book->have_posts()) {
                     while ($next_book->have_posts()) : $next_book->the_post();
-                        echo '<a href="' . get_permalink() . '">Next Book: ' . get_the_title() . ' &rarr;</a><br>';
+                        echo '<a href="' . get_permalink() . '" class="justify-self-end">Next Book: ' . get_the_title() . ' &rarr;</a>';
                     endwhile;
                     wp_reset_postdata();
                 }
