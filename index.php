@@ -54,12 +54,12 @@ $pp = get_option('page_for_posts');
                 <div class="author-buttons">
                     <div class="author-buttons__title">By Author:</div>
                     <ul>
-                        <li class="filter-btn" data-author="all">All (<?= count($authors) ?>)</li>
+                        <li class="filter-btn" data-filter="all">All (<?= count($authors) ?>)</li>
                         <?php
                         ksort($authors);
                         foreach ($authors as $author => $c) {
                         ?>
-                            <li class="filter-btn" data-author="<?= acf_slugify($author) ?>"><?= $author ?> (<?= $c ?>)</li>
+                            <li class="filter-btn" data-filter="<?= acf_slugify($author) ?>"><?= $author ?> (<?= $c ?>)</li>
                         <?php
                         }
                         ?>
@@ -68,12 +68,12 @@ $pp = get_option('page_for_posts');
                 <div class="series-buttons">
                     <div class="series-buttons__title">By Series:</div>
                     <ul>
-                        <li class="filter-btn" data-author="all">All (<?= count($series) ?>)</li>
+                        <li class="filter-btn" data-filter="all">All (<?= count($series) ?>)</li>
                         <?php
                         ksort($series);
                         foreach ($series as $s => $v) {
                         ?>
-                            <li class="filter-btn" data-author="<?= acf_slugify($s) ?>"><?= $s ?> (<?= $v ?>)</li>
+                            <li class="filter-btn" data-filter="<?= acf_slugify($s) ?>"><?= $s ?> (<?= $v ?>)</li>
                         <?php
                         }
                         ?>
