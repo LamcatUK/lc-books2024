@@ -19,7 +19,7 @@ get_header();
     $sidebar = array();
     $after;
     ?>
-    <section class="breadcrumbs text-white fs-200 container-xl pt-4 pb-2">
+    <section class="breadcrumbs fs-200 container-xl pt-4 pb-2">
         <?php
         if (function_exists('yoast_breadcrumb')) {
             yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
