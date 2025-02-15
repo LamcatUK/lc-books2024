@@ -1,0 +1,52 @@
+.latest_posts {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+    }
+
+    .latest__line {
+        width: 100%;
+        height: 1px;
+        background-color: white;
+    }
+
+    &__card {
+        position: relative;
+        background-image: linear-gradient(0deg, hsl(0 0 0 / 0.8) 25%, transparent 50%);
+        display: grid;
+        align-items: end;
+        aspect-ratio: 3 / 4;
+        width: 100%;
+        text-decoration: none;
+        overflow: hidden;
+        h3 {
+            color: var(--col-white);
+            font-family: var(--ff-body);
+            font-size: var(--fs-400);
+            text-transform: uppercase;
+            padding: 1rem;
+            margin-bottom: 0;
+            text-align: start;
+        }
+
+        transition: padding-bottom var(--transition);
+        &:hover {
+            padding-bottom: 1rem;
+        }
+    }
+    &__card_bg {
+        position: absolute;
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: contain;
+        z-index: -1;
+    }
+}

@@ -1,0 +1,43 @@
+.tiles {
+    background-image: linear-gradient(45deg, hsla(0, 0%, 50%, 0.8), transparent);
+    &__grid {
+        display: grid;
+        @media (min-width:576px) {
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media (min-width:992px) {
+            grid-template-columns: repeat(4,1fr);
+        }
+    }
+    &__tile {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1;
+        isolation: isolate;
+        display: grid;
+        place-content: center;
+        text-decoration: none;
+        color: var(--col-white);
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            color: var(--col-green-400);
+            .tiles__bg {
+                transform: scale(1.1);
+            }
+        }
+    }
+    &__title {
+        font-size: var(--fs-450);
+        font-weight: var(--fw-600);
+        text-transform: uppercase;
+    }
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        transition: transform var(--transition);
+    }
+}

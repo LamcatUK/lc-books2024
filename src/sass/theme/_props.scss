@@ -1,0 +1,32 @@
+:root {
+
+    --col-black: #000000;
+    --col-white: #FFFFFF;
+    --col-grey-100: #eeeeee;
+
+    --col-highlight: #ffee00;
+
+    --ff-body: 'Poppins', sans-serif;
+    --ff-heading: 'Poppins', sans-serif;
+
+    --ff-fa: 'Font Awesome 6 Free';
+
+    --fw-400: 300;
+    --fw-600: 700;
+
+    --fs-100: clamp(0.72rem, 0.56rem + 0.83vw, 0.72rem);  /* 13px navigation */
+    --fs-200: clamp(0.78rem, 0.68rem + 0.67vw, 0.78rem);  /* 14px small text */
+    --fs-300: clamp(0.875rem, 0.875rem + 0.4375vw, 0.875rem); /* 18px normal text */
+    --fs-400: clamp(1rem, 1rem + 0.5vw, 1rem);            /* 18px - Base size */
+    --fs-450: clamp(1.25rem, 1.25rem + 0.625vw, 1.5rem);   /* 24px size */
+    --fs-500: clamp(1.5rem, 1.5rem + 0.75vw, 2rem);        /* 36px h2 headings */
+    --fs-600: clamp(2rem, 2rem + 1vw, 3rem);               /* 60px h1 headings */
+
+    --transition: 200ms ease-in;
+
+    --fa-li-margin: 1.5rem;
+
+    --h-top: 55px;
+    --h-top-lg: 70px;
+
+}

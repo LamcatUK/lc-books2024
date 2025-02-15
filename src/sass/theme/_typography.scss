@@ -1,0 +1,121 @@
+/* poppins-300 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/poppins-v21-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-700 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/poppins-v21-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: var(--ff-body);
+    font-weight: var(--fw-400);
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: var(--col-black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-600);
+    margin-bottom: 1rem;
+    // line-height: 0.9;
+    text-wrap: balance;
+}
+
+h1, .h1 {
+    font-size: var(--fs-600);
+}
+h2, .h2 {
+    font-size: var(--fs-500);
+}
+h3, .h3 {
+    font-size: var(--fs-400);
+}
+
+.center-container {
+    display: flex;
+    justify-content: center; /* Center the flex items horizontally */
+}
+
+.has-text-align-center {
+    text-align: center;
+}
+
+.fs-200 {
+    font-size: var(--fs-200) !important;
+}
+
+.fs-300,
+.has-small-font-size,
+.small {
+    font-size: var(--fs-300) !important;
+}
+
+.fs-700,
+.has-medium-font-size,
+.medium {
+    font-size: var(--fs-700) !important;
+}
+
+.fs-800,
+.has-large-font-size,
+.large {
+    font-size: var(--fs-800) !important;
+}
+
+strong, b, .fw-bold {
+    font-weight: var(--fw-600);
+}
+
+.ff-body {
+    font-family: var(--ff-body);
+}
+.ff-heading {
+    font-family: var(--ff-heading);
+}
+
+.fw-400 {
+    font-weight: var(--fw-400);
+}
+.fw-600 {
+    font-weight: var(--fw-600);
+}
+.fw-900 {
+    font-weight: var(--fw-900);
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+.w-constrain {
+    max-width: 85ch;
+    margin-inline: auto;
+}
+
+// .w-constrain-sm {
+//     max-width: 65ch;
+//     margin-inline: auto;
+// }
+
+.w-constrain-sm {
+    max-width: 35ch;
+    margin-inline: auto;
+}

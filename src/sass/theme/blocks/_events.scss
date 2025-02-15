@@ -1,0 +1,100 @@
+.events {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        z-index: -1;
+    }
+
+    &__row {
+        display: grid;
+        row-gap: 0.5rem;
+        grid-template-areas: "date" "detail" "link";
+        @media(min-width:576px) {
+            grid-template-areas: "date detail" "link link";
+            grid-template-columns: 150px auto;
+        }
+        @media(min-width:768px) {
+            grid-template-areas: "date detail link";
+            grid-template-columns: 150px auto 1fr;
+        }
+        border-top: 2px solid var(--col-white);
+        padding: 1rem;
+        background-color: hsl(0 0 0 / 0.6);
+        column-gap: 1rem;
+        align-items: center;
+        &:last-of-type {
+            border-bottom: 2px solid var(--col-white);
+        }
+    }
+    &__date {
+        grid-area: date;
+        align-items: flex-end;
+        text-align: end;
+        padding-inline-end: 1rem;
+        display: flex;
+        column-gap: 0.5rem;
+        align-items: center;
+        @media (min-width:576px) {
+            display: grid;
+            width: 150px;
+            border-right: 1px dotted var(--col-white);
+            &--day, &--mon {
+                display: block;
+            }
+        }
+        &--day {
+            text-align: end;
+            font-size: var(--fs-450);
+            font-weight: var(--fw-600);
+        }
+        &--mon {
+            text-align: end;
+            font-size: var(--fs-200);
+            font-weight: var(--fw-600);
+            text-transform: uppercase;
+        }
+    }
+    &__detail {
+        grid-area: detail;
+        align-items: flex-start;
+        flex: 1;
+        text-transform: uppercase;
+    }
+    &__venue {
+        font-size: var(--fs-400);
+        font-weight: var(--fw-600);
+    }
+    &__location {
+        font-size: var(--fs-200);
+        font-weight: var(--fw-600);
+        color: var(--col-silver-400);
+    }
+    &__link {
+        grid-area: link;
+        justify-self: flex-end;
+        // @media (min-width:768px) {
+        //     justify-self: flex-end;
+        // }
+    }
+
+    .button-tickets {
+        color: var(--col-white);
+        padding: 0.2rem 1rem;
+        font-weight: var(--fw-400);
+        background-color: var(--col-grey-400);
+        transition: background-color var(--transition), color var(--transition);
+        &:hover,
+        &:focus,
+        &:focus-visible, {
+            background-color: var(--col-silver-400);
+            color: var(--col-black);
+        }
+    }
+}

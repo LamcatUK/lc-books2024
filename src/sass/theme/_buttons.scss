@@ -1,0 +1,36 @@
+.button {
+    padding: 0.5em 2em !important;
+    text-decoration: none !important;
+    transition: background-color var(--transition), color var(--transition), border var(--transition) !important;
+    font-weight: var(--fw-600) !important;
+    font-size: var(--fs-400) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    align-self: start;
+    border-radius: 0 !important;
+}
+
+.button--sm {
+    padding: 0.5em 1em;
+}
+
+.button-outline {
+    border: 1px solid var(--col-grey-600);
+    color: var(--col-grey-600);
+    background-color: transparent;
+    &:hover {
+        background-color: var(--col-grey-600);
+        color: var(--col-white);
+    }
+}
+
+.button-green {
+    border: 1px solid var(--col-green-400) !important;
+    background-color: var(--col-green-400) !important;
+    color: var(--col-black) !important;
+    &:hover {
+        background-color: var(--col-black) !important;
+        color: var(--col-green-400) !important;
+    }
+}

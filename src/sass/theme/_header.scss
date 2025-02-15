@@ -1,0 +1,110 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    transition: top var(--transition);
+
+    &.scrolled {
+        backdrop-filter: blur(2px);
+        background:rgba(0, 0, 0, 0.4);
+        @media (min-width:992px) {
+            background:rgba(0, 0, 0, 0.1);
+        }
+    }
+    &.hidden {
+        top: -110px;
+    }
+}
+
+.offcanvas-header {
+    width: 100%;
+    position: relative;
+    justify-content: start;
+    padding: 0.6rem 0.7rem;
+    button {
+        position: absolute;
+        top: 0.5rem;
+        right: 2rem;
+        font-size: var(--bs-navbar-toggler-font-size);
+    }
+}
+
+.nav-link {
+    font-family: var(--ff-body);
+    font-size: var(--fs-400);
+
+    @media (min-width:992px) {
+        font-size: var(--fs-100);
+    }
+    font-weight: var(--fw-600);
+    color: var(--col-white);
+    text-transform: uppercase;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    position: relative;
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &[aria-current="page"] {
+        color: var(--col-green-400);
+    }
+}
+    
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-brand {
+    img {
+        object-fit: contain;
+    }
+    width: 200px;
+    height: 30px;
+    padding-block: 0;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.offcanvas-fullscreen {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9); /* Optional: Add a semi-transparent background */
+    z-index: 1055; /* Ensure it appears above other elements */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offcanvas-fullscreen .offcanvas-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+body.offcanvas-open {
+    overflow: hidden; /* Disable scrolling when the offcanvas is open */
+}
+
+.offcanvas,
+.offcanvas.show {
+    transition: none !important;
+}
+
+.offcanvas-backdrop {
+    transition: none !important;
+}
