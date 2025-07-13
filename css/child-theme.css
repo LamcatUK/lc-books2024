@@ -21972,13 +21972,6 @@ footer .footer_info span a:hover {
   color: goldenrod;
 }
 
-.author-buttons,
-.series-buttons,
-.rating-buttons,
-.year-buttons,
-.sort-buttons {
-  margin-bottom: 1rem;
-}
 .author-buttons__title,
 .series-buttons__title,
 .rating-buttons__title,

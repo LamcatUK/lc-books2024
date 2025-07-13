@@ -95,8 +95,8 @@
 .rating-buttons,
 .year-buttons,
 .sort-buttons {
-  margin-bottom: 1rem;
-  
+  //   margin-bottom: 1rem;
+
   &__title {
     font-size: var(--fs-300);
     font-weight: var(--fw-600);
@@ -133,11 +133,11 @@
   padding: 0.5rem 0.25rem;
   border-radius: var(--border-radius-sm);
   transition: background-color var(--transition);
-  
+
   &:hover {
     background-color: var(--col-grey-100);
   }
-  
+
   .collapse-icon {
     font-weight: bold;
     font-size: 1.2em;
