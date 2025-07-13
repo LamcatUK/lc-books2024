@@ -8,139 +8,135 @@
 @import "blocks/blocks";
 
 :root {
-    --col-accent: var(--col-red-400);
+  --col-accent: var(--col-red-400);
 }
 
 html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
 }
 
 a.anchor {
-    display: block;
-    position: relative;
-    top: -100px;
-    visibility: hidden;
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
 }
 
 .edit-link {
-    display: none;
+  display: none;
 }
 
 ::selection {
-    background-color: var(--col-highlight);
-    color: var(--col-black);
+  background-color: var(--col-highlight);
+  color: var(--col-black);
 }
 
 a {
-    transition: color var(--transition);
+  transition: color var(--transition);
 }
 
 .container-xl .container-xl {
-    padding-inline: 0;
+  padding-inline: 0;
 }
 
 main {
-
-    position: relative;
-    a:not([class]) {
-        text-decoration: none;
-        font-weight: var(--fw-600);
-        color: inherit;
-        &:hover {
-            color: var(--col-red-400)
-        }
+  position: relative;
+  a:not([class]) {
+    text-decoration: none;
+    font-weight: var(--fw-600);
+    color: inherit;
+    &:hover {
+      color: var(--col-red-400);
     }
+  }
 
-    // ul:not([class]) > li {
-    //     padding-bottom: 0.5em;
-    // }
-
+  // ul:not([class]) > li {
+  //     padding-bottom: 0.5em;
+  // }
 }
 
-@media all and (min-width:992px) {
-    .cols-lg-2 {
-        columns: 2;
-    }
-    .cols-lg-3 {
-        columns: 3;
-    }
-    .cols-lg-4 {
-        columns: 4;
-    }
+@media all and (min-width: 992px) {
+  .cols-lg-2 {
+    columns: 2;
+  }
+  .cols-lg-3 {
+    columns: 3;
+  }
+  .cols-lg-4 {
+    columns: 4;
+  }
 }
-
 
 .breadcrumbs {
-    color: var(--col-grey-600);
-    font-size: var(--fs-300);
-    a {
-        text-decoration: none;
-        color: inherit;
-        font-weight: var(--fw-600);
-        &:hover {
-            color: var(--col-black);
-        }
+  color: var(--col-grey-600);
+  font-size: var(--fs-300);
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: var(--fw-600);
+    &:hover {
+      color: var(--col-black);
     }
+  }
 }
 
-
 .accordion-item {
-    --bs-accordion-border-radius: 0;
+  --bs-accordion-border-radius: 0;
 }
 
 .accordion-button {
-    --bs-accordion-inner-border-radius: 0;
-    --bs-accordion-active-color: var(--col-green-400);
-    --bs-accordion-active-bg: transparent;
+  --bs-accordion-inner-border-radius: 0;
+  --bs-accordion-active-color: var(--col-green-400);
+  --bs-accordion-active-bg: transparent;
 
-    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 
-    &:focus {
-        --bs-accordion-btn-focus-border-color: var(--col-green-400);
-        --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem hsl(var(--hsl-green-400) / 0.25);
-    }
+  &:focus {
+    --bs-accordion-btn-focus-border-color: var(--col-green-400);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem
+      hsl(var(--hsl-green-400) / 0.25);
+  }
 
-    font-size: var(--fs-600);
-    font-weight: var(--fw-600);
+  font-size: var(--fs-600);
+  font-weight: var(--fw-600);
 }
 
 .wp-block-columns-is-layout-flex {
-    gap: 1rem;
+  gap: 1rem;
 }
 
 .wp-block-image {
-    img {
-        width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 }
 
 .wpcf7 {
-    max-width: unset !important;
-    input[type=text],
-    input[type=email],
-    textarea {
-        border-radius: 0;
-    }
+  max-width: unset !important;
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    border-radius: 0;
+  }
 }
 
-
 .w-md-auto {
-    @media (min-width:768px) {
-        width: auto !important;
-    }
+  @media (min-width: 768px) {
+    width: auto !important;
+  }
 }
 
 .page_bg {
-    position: absolute;
-    width: 100%;
-    height: 100% !important;
-    object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
 }
 
 .hero,
 .contact {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }

@@ -5,6 +5,9 @@ defined('ABSPATH') || exit;
 
 require_once LC_THEME_DIR . '/inc/lc-utility.php';
 require_once LC_THEME_DIR . '/inc/lc-blocks.php';
+require_once LC_THEME_DIR . '/inc/lc-csv-export.php';
+require_once LC_THEME_DIR . '/inc/lc-data-recovery.php';
+require_once LC_THEME_DIR . '/inc/lc-duplicate-debug.php';
 // require_once LC_THEME_DIR . '/inc/lc-blog.php';
 
 if (function_exists('acf_add_options_page')) {

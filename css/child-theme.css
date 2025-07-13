@@ -21950,6 +21950,9 @@ footer .footer_info span a:hover {
 .grid .card__date {
   font-size: var(--fs-200);
 }
+.grid .card__rating {
+  font-size: var(--fs-200);
+}
 .grid .card__title {
   font-size: var(--fs-400);
   font-family: var(--ff-body);
@@ -21960,24 +21963,88 @@ footer .footer_info span a:hover {
   grid-template-rows: auto;
 }
 
+.fa-solid.fa-star,
+.fa-solid.fa-star-half-stroke {
+  color: goldenrod;
+}
+
+.fa-regular.fa-star {
+  color: goldenrod;
+}
+
+.author-buttons,
+.series-buttons,
+.rating-buttons,
+.year-buttons,
+.sort-buttons {
+  margin-bottom: 1rem;
+}
 .author-buttons__title,
 .series-buttons__title,
-.year-buttons__title {
+.rating-buttons__title,
+.year-buttons__title,
+.sort-buttons__title {
   font-size: var(--fs-300);
   font-weight: var(--fw-600);
 }
 .author-buttons ul,
 .series-buttons ul,
-.year-buttons ul {
+.rating-buttons ul,
+.year-buttons ul,
+.sort-buttons ul {
   -webkit-padding-start: 0;
   padding-inline-start: 0;
   list-style: none;
 }
 .author-buttons li,
 .series-buttons li,
-.year-buttons li {
+.rating-buttons li,
+.year-buttons li,
+.sort-buttons li {
   cursor: pointer;
   font-size: var(--fs-200);
+  padding: 0.25rem 0.25rem;
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition);
+}
+.author-buttons li:hover,
+.series-buttons li:hover,
+.rating-buttons li:hover,
+.year-buttons li:hover,
+.sort-buttons li:hover {
+  background-color: var(--col-grey-200);
+}
+.author-buttons li.active,
+.series-buttons li.active,
+.rating-buttons li.active,
+.year-buttons li.active,
+.sort-buttons li.active {
+  background-color: green;
+  color: var(--col-white);
+}
+
+.collapsible-title {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.25rem;
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition);
+}
+.collapsible-title:hover {
+  background-color: var(--col-grey-100);
+}
+.collapsible-title .collapse-icon {
+  font-weight: bold;
+  font-size: 1.2em;
+  min-width: 20px;
+  text-align: center;
+}
+
+.collapsible-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
 .single-blog {
@@ -21986,10 +22053,12 @@ footer .footer_info span a:hover {
 .single-blog h1, .single-blog .h1 {
   font-family: var(--ff-body);
 }
-.single-blog h2, .single-blog .h2 {
+.single-blog h2,
+.single-blog .h2 {
   font-size: var(--fs-700);
 }
-.single-blog h3, .single-blog .h3 {
+.single-blog h3,
+.single-blog .h3 {
   font-size: var(--fs-600);
 }
 .single-blog__image {
@@ -22027,7 +22096,9 @@ footer .footer_info span a:hover {
   --bs-accordion-active-bg: transparent;
   --bs-accordion-btn-padding-x: 0;
   --bs-accordion-btn-padding-y: 0;
-  --bs-accordion-transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
+  --bs-accordion-transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
   --bs-accordion-border-color: var(--bs-border-color);
   --bs-accordion-btn-color: var(--col-green-400);
   --bs-accordion-btn-bg: transparent;
@@ -22240,7 +22311,8 @@ main a:not([class]):hover {
 }
 .accordion-button:focus {
   --bs-accordion-btn-focus-border-color: var(--col-green-400);
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem hsl(var(--hsl-green-400) / 0.25);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem
+    hsl(var(--hsl-green-400) / 0.25);
 }
 
 .wp-block-columns-is-layout-flex {

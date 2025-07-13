@@ -6,6 +6,7 @@
             "key": "field_66cb8c96d16ce",
             "label": "Author",
             "name": "author",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
             "key": "field_66cb8cf50d81c",
             "label": "Series",
             "name": "series",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -44,6 +46,7 @@
             "key": "field_66cb8cfc0d81d",
             "label": "Series Number",
             "name": "series_number",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -60,6 +63,28 @@
             "min": "",
             "max": "",
             "step": ""
+        },
+        {
+            "key": "field_687410223e3bd",
+            "label": "Rating",
+            "name": "rating",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": "5.0",
+            "allow_in_bindings": 0,
+            "step": "0.1",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -80,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724679033
+    "modified": 1752437690
 }
